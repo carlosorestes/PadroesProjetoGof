@@ -1,4 +1,4 @@
-package br.com.iftm.chainsOfResponsability;
+package br.com.iftm.observer;
 
 import java.io.IOException;
 import java.util.List;

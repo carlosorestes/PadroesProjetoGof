@@ -1,22 +1,14 @@
-package br.com.iftm.chainsOfResponsability;
+package br.com.iftm.observer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class ProcessaCompactado extends Processador {
+public class ProcessaCompactado implements Processador {
 	
-	public ProcessaCompactado(Processador proximoProcessador) {
-		super(proximoProcessador);
-	}
-	
-	public ProcessaCompactado() {
-		
-	}
-
 	@Override
-	protected byte[] processaConteudo(byte[] bytes) throws IOException {
+	public byte[] processaConteudo(byte[] bytes) throws IOException {
 		//compacta
 		ByteArrayOutputStream byteout = new ByteArrayOutputStream();
 		ZipOutputStream out = new ZipOutputStream(byteout);

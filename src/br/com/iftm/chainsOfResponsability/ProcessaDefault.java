@@ -2,10 +2,18 @@ package br.com.iftm.chainsOfResponsability;
 
 import java.io.IOException;
 
-public class ProcessaDefault implements Processador {
+public class ProcessaDefault extends Processador {
 	
+	public ProcessaDefault(Processador proximoProcessador) {
+		super(proximoProcessador);
+	}
+	
+	public ProcessaDefault() {
+		
+	}
+
 	@Override
-	public  byte[] processaConteudo(byte[] conteudo) throws IOException {
+	protected  byte[] processaConteudo(byte[] conteudo) throws IOException {
 		return conteudo;
 	}
 }
